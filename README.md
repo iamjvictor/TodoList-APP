@@ -3,10 +3,10 @@
 >
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/iamjvictor/TodoList-APP?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/iamjvicto/TodoList-APP?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/iamjvicto/TodoList-APP?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iamjvicto/TodoList-APP?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iamjvicto/TodoList-APPe?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/iamjvictor/TodoList-APP?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/iamjvictor/TodoList-APP?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iamjvictor/TodoList-APP?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iamjvictor/TodoList-APPe?style=for-the-badge)
 
 <img src="exemplo-image.png" alt="exemplo imagem">
 
