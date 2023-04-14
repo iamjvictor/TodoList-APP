@@ -12,7 +12,16 @@ const Stack = createStackNavigator()
 export default function App() {
   return (
    <NavigationContainer>
-      <Stack.Navigator initialRouteName='List' screenOptions={{headerStyle: {backgroundColor: '#B0C4DE',}, }}>
+      <Stack.Navigator initialRouteName='List' screenOptions={{
+        headerStyle: {
+        backgroundColor: '#B0C4DE',
+        height: 60,
+        },
+        headerTitleStyle:{
+            fontWeight:"bold",
+            textTransform:"uppercase"
+        }
+         }}>
 
       
 

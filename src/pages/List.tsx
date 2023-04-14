@@ -42,7 +42,7 @@ useEffect (() => {
 
 const addTodo = async () => {
 const doc = await addDoc(collection(FIRESTORE_DB, 'Task'), {title: task, done: false})
-setTask('');
+setTask("");
 };
 
 const renderTask = ({item}: any) =>{
@@ -75,7 +75,7 @@ const renderTask = ({item}: any) =>{
       <View style={styles.container}>
         <View style={styles.form}>
             <TextInput style={styles.input} placeholder='Add a new Task' onChangeText={(text: string) => setTask(text)} value={task}/>
-            <Button onPress={() => addTodo()} title='ADD' disabled={task === ''}/>
+            <Button onPress={() => addTodo()} title='ADD' disabled={task === ''} />
         </View>
 
         {tasks.length > 0 && (
@@ -94,7 +94,10 @@ const renderTask = ({item}: any) =>{
 
 
 
-        <Button onPress={() => navigation.navigate('Details')} title='Details'/>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Details')}  >
+        <Text style={styles.buttonText}>Details</Text>
+      </TouchableOpacity>
+      
         
       </View>
   )
@@ -129,7 +132,21 @@ const styles = StyleSheet.create({
 
   button:{
     borderRadius:10,
+    backgroundColor:"#B0C4DE",
+    elevation:8,
+    padding: 10,
+    marginRight:"auto",
+    justifyContent:"center",
+    marginLeft:"auto",
+    marginTop:30,
+
     
+  },
+
+  buttonText:{
+    fontWeight:"bold",
+    fontSize:16,
+    textTransform:"uppercase"
   },
 
   taskContainer:{
@@ -138,6 +155,7 @@ const styles = StyleSheet.create({
     marginVertical:5,
     backgroundColor:"#B0C4DE",
     padding:10,
+    
   
   }, 
 
