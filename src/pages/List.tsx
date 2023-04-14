@@ -3,7 +3,9 @@ import { Text, View,  Button, TextInput, StyleSheet, FlatList, TouchableOpacity 
 import { FIRESTORE_DB } from '../config/firebaseconfig';
 import { addDoc, collection, deleteDoc, doc, onSnapshot, updateDoc } from 'firebase/firestore';
 import Ionicons from '@expo/vector-icons/Ionicons';
+
 import { AntDesign } from '@expo/vector-icons';
+
 
 export interface Task {
   title: string;
@@ -16,6 +18,7 @@ const List = ({ navigation}: any) =>{
 
 const [tasks, setTasks] = useState<Task[]>([]);
 const [task, setTask] = useState('');
+const [check, setCheck] = useState('');
 
 useEffect (() => {
   const taskRef = collection(FIRESTORE_DB, 'Task');
@@ -41,24 +44,39 @@ useEffect (() => {
 }, []);
 
 const addTodo = async () => {
+<<<<<<< HEAD
 const doc = await addDoc(collection(FIRESTORE_DB, 'Task'), {title: task, done: false})
 setTask("");
+=======
+ 
+  let today = new Date();
+  let date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();     
+  const doc = await addDoc(collection(FIRESTORE_DB, 'Task'), {title: task, done: false, createDate: date, checkDate: check,})
+  setTask('');
+>>>>>>> detailsConteiner
 };
+
 
 const renderTask = ({item}: any) =>{
 
   const ref = doc(FIRESTORE_DB, `Task/${item.id}`);
 
   const doneTask = async () => {
-    updateDoc(ref, { done: !item.done});
+    let today = new Date();
+    let date = today.getDate()+'-'+ (today.getMonth() + 1 )+'-'+ today.getFullYear() + '     ' + (today.getHours() - 3) + ':'+ today.getMinutes() ;     
+    updateDoc(ref, { done: !item.done, checkDate: date});
     
   }
 
   const deleteTask =async () => {
     deleteDoc(ref);
   }
+
+
+
+/* Render Task Container  */
   return(
-    
+
     <View style={styles.taskContainer}>
       <TouchableOpacity style={styles.task} onPress={doneTask}>
         {item.done && <AntDesign name="checksquare" size={24} color="green" />}
@@ -71,7 +89,10 @@ const renderTask = ({item}: any) =>{
 }
 
 
- return(
+
+/*Render the Form an call function renderTask */
+
+return(
       <View style={styles.container}>
         <View style={styles.form}>
             <TextInput style={styles.input} placeholder='Add a new Task' onChangeText={(text: string) => setTask(text)} value={task}/>
@@ -92,6 +113,7 @@ const renderTask = ({item}: any) =>{
         )}
        
 
+<<<<<<< HEAD
 
 
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Details')}  >
@@ -99,6 +121,13 @@ const renderTask = ({item}: any) =>{
       </TouchableOpacity>
       
         
+=======
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Details')}>
+          <Text style={styles.buttonText}>Details</Text>
+      </TouchableOpacity>
+      </View>
+>>>>>>> detailsConteiner
       </View>
   )
 }
@@ -129,7 +158,9 @@ const styles = StyleSheet.create({
     padding:10,
     
   },
+  
 
+  
   button:{
     borderRadius:10,
     backgroundColor:"#B0C4DE",
@@ -162,14 +193,32 @@ const styles = StyleSheet.create({
   taskTitle:{
     paddingHorizontal:5,
     fontWeight: "bold",
-    color:"black"
+    color:"black",
+    textTransform:"uppercase"
   },
 
   task:{
     flexDirection: 'row',
     alignItems: 'center',
     flex:1,
+  },
+
+  buttonContainer:{
+    
+    flex: 1,
+    marginTop:15,
+    alignItems: 'center',
+    
+  },
+
+  buttonText:{
+   
+      fontSize: 20,
+      textAlign: 'center',
+      fontWeight:"bold",
   }
 
 
 });
+
+
