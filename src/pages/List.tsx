@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Text, View,  Button, TextInput, StyleSheet, FlatList, TouchableOpacity } from 'react-native'
+import { Text, View,  Button, TextInput, StyleSheet, FlatList, TouchableOpacity, ScrollView } from 'react-native'
 import { FIRESTORE_DB } from '../config/firebaseconfig';
 import { addDoc, collection, deleteDoc, doc, onSnapshot, updateDoc } from 'firebase/firestore';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -44,16 +44,10 @@ useEffect (() => {
 }, []);
 
 const addTodo = async () => {
-<<<<<<< HEAD
-const doc = await addDoc(collection(FIRESTORE_DB, 'Task'), {title: task, done: false})
-setTask("");
-=======
- 
   let today = new Date();
-  let date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();     
-  const doc = await addDoc(collection(FIRESTORE_DB, 'Task'), {title: task, done: false, createDate: date, checkDate: check,})
-  setTask('');
->>>>>>> detailsConteiner
+  let date = today.getDate()+'-'+ (today.getMonth() + 1 )+'-'+ today.getFullYear() ;  
+  const doc = await addDoc(collection(FIRESTORE_DB, 'Task'), {title: task, done: false, createDate: date})
+setTask("");
 };
 
 
@@ -113,7 +107,6 @@ return(
         )}
        
 
-<<<<<<< HEAD
 
 
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Details')}  >
@@ -121,13 +114,6 @@ return(
       </TouchableOpacity>
       
         
-=======
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Details')}>
-          <Text style={styles.buttonText}>Details</Text>
-      </TouchableOpacity>
-      </View>
->>>>>>> detailsConteiner
       </View>
   )
 }

@@ -7,11 +7,13 @@ import List from './src/pages/List';
 import Details from './src/pages/Details'
 
 
+
 const Stack = createStackNavigator()
 
 export default function App() {
   return (
    <NavigationContainer>
+   
       <Stack.Navigator initialRouteName='List' screenOptions={{
         headerStyle: {
         backgroundColor: '#B0C4DE',
