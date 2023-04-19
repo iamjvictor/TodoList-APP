@@ -45,6 +45,7 @@ console.log(icon)
           
         <View>
         <Text style={styles.weatherInfo}>{data.location.name}</Text>
+        <Text style={styles.region}>{data.location.region}</Text>
         <Text style={styles.temperature}>{data.current.temp_c + 'º' }</Text>
         </View>
         <Image source={{uri: icon}} style={styles.logo} />
@@ -70,17 +71,24 @@ console.log(icon)
       marginBottom:10,
     },
     weatherInfo: {
-        fontSize: 28,
+        fontSize: 20,
         fontWeight: 'bold',
         color: '#333',
         textAlign: 'center',
         
     },
+    region: {
+      fontSize: 15,
+      fontWeight: 'bold',
+      color: '#333',
+      textAlign: 'left',
+      
+  },
     temperature: {
-        fontSize: 48,
+        fontSize: 38,
         fontWeight: 'bold',
         color: '#333',
-        textAlign: 'center',
+        textAlign: 'left',
       },
     logo: {
       width: 66,
