@@ -7,9 +7,11 @@
 ![GitHub forks](https://img.shields.io/github/forks/iamjvictor/TodoList-APP?style=for-the-badge)
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iamjvictor/TodoList-APP?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iamjvictor/TodoList-APPe?style=for-the-badge)
-
-<img src="TelaInicial.png" alt="Tela inicial">
+<div>
+  <img src="TelaInicial.png" alt="Tela inicial">
 <img src="DetailsScreen.png" alt="Tela inicial">
+</div>
+
 
 > Este projeto consiste em uma aplicação React Native onde o usúario pode criar uma lista de afazeres, que fica armazenada em um banco de dados não relacional, o firebase.
 
